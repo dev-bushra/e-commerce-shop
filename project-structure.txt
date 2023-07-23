@@ -1,0 +1,21 @@
+E-Commerce Project
+
+- Section: 
+Components: [ Components of this Section ]
+Services: [ section.service.ts ]
+Module: [ section.module.ts ]
+
+- Shared:
+Components: [ NavBar - Footer ]
+Services: [ shared.service.ts ]
+Module: [ shared.module.ts ]
+
+- Products:
+Components: [ all-products - products-details ]
+Services: [ product.sevice.ts ]
+Module: [ products.module.ts ]
+
+- Carts:
+Components: [ Carts ]
+Services: [ Carts.sevice ]
+Module: [ carts.module.ts ]
