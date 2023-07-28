@@ -1,5 +1,5 @@
-<label for="select" class="mb-1">{{ title }}:</label>
-<select class="form-select rounded" (change)="detectChanges($event)">
- <option selected>All</option>
- <option *ngFor="let option of data">{{ data }}</option>
+<label for="" class="my-1">{{title}} :</label>
+<select class="form-control" (change)="detectChanges($event)">
+    <option value="all" selected>All</option>
+    <option value="{{option}}" *ngFor="let option of data">{{option}}</option>
 </select>

@@ -1,27 +1,26 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-  
 export class ProductsService {
 
-  constructor(private http: HttpClient) { }
-
-  // API call to get all categories
-  getAllCategories() {
-    return this.http.get(environment.baseApi + 'products/categories')
-  }
-
-  // API call to get all products
+  constructor(private http:HttpClient) { }
   getAllProducts() {
-    return this.http.get(environment.baseApi + 'products')
+    return this.http.get(environment.baseApi +'products')
   }
 
-  // API call to get all products by its categories
-   getProductsByCategories(keyword: string) {
-    return this.http.get(environment.baseApi + 'products/category' + keyword)
+  getAllCategories() {
+    return this.http.get(environment.baseApi +'products/categories')
   }
+  getProductsByCategory(keyword:string) {
+    return this.http.get(environment.baseApi +'products/category/'+keyword)
+  }
+
+  getProductById(id:any) {
+    return this.http.get(environment.baseApi +'products/'+id)
+  }
+  
 }

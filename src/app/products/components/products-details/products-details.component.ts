@@ -8,28 +8,26 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./products-details.component.scss']
 })
 export class ProductsDetailsComponent implements OnInit {
-
-  id: any
-  data: any = {}
-  loading: boolean = false
-
-  constructor(private route: ActivatedRoute, private service: ProductsService) {
-    this.id = this.route.snapshot.paramMap.get("id")
-    console.log(this.id);
+  id:any
+  data:any = {}
+  loading:boolean = false
+  constructor(private route:ActivatedRoute , private service:ProductsService) {
+   this.id = this.route.snapshot.paramMap.get("id")
+   console.log(this.id)
   }
-
+  
   ngOnInit(): void {
     this.getProduct()
   }
 
   getProduct() {
-    // this.loading = true
-    // this.service.getProductsById(this.id).subcribe(res => {
-    //   this.loading = false
-    //   this.data = res
-    // }, error => {
-    //   alert(error)
-    // })
+    this.loading = true
+    this.service.getProductById(this.id).subscribe(res => {
+      this.loading = false
+      this.data = res
+    } ,error => {
+      this.loading = false
+      alert(error)
+    })
   }
-
 }
