@@ -1,9 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+// Global StylesSheet
 
-body {
-    padding: 0;
-    margin: 0!important;
-  }
-  *{
-    font-family: cursive;
+// Variables
+$primary-color: #1e8beb;
+$secondary-color: #66f;
+$gradient_background: linear-gradient(360deg, #1e8beb 0%, #4ca3ef 100%);
+
+// Reset Default
+*, html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+html, body { 
+  height: 100%; 
+  background-color: #ecf6ff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 !important;
 }

@@ -1,4 +1,4 @@
-<div class="item" >
+<!-- <div class="item" >
     <div routerLink="/details/{{data.id}}">
         <img src="{{data.image}}" alt="">
         <div class="body">
@@ -14,5 +14,33 @@
             <button class="btn btn-danger" (click)="add();addButton = false">Add</button>
         </div>
         <span>{{data.price}} L.E</span>
+    </div>
+</div> -->
+
+<div class="product-card">
+    <div routerLink="/details/{{data.id}}">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src="{{ data.image }}" alt="">
+        </div>
+    </div>
+    <div class="product-details">
+        <span class="product-catagory">Man,bag</span>
+        <h4><a href="">{{ data.title }}</a></h4>
+        <p>{{ data.description }}</p>
+        <div class="product-bottom-details">
+            <div class="product-price"><small>AED 96.99</small><br/>AED {{ data.price }}</div>
+            <div class="add-card">
+                <button class="btn" *ngIf="!addButton" (click)="addButton = true">Add To Cart</button>
+                <div class="d-flex" *ngIf="addButton">
+                    <input type="number" class="form-control count" [(ngModel)]="amount">
+                    <button class="btn btn-danger" (click)="add();addButton = false">Add</button>
+                </div>
+            </div>
+            <!-- <div class="product-links">
+                <a href=""><i class="fa fa-heart"></i></a>
+                <a href=""><i class="fa fa-shopping-cart"></i></a>
+            </div> -->
+        </div>
     </div>
 </div>
