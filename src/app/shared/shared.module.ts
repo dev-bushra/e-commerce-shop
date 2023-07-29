@@ -13,13 +13,15 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { FooterComponent } from './components/footer/footer.component';
 
 // Moudule
 @NgModule({
   declarations: [
     HeaderComponent,
     SpinnerComponent,
-    SelectComponent
+    SelectComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   exports : [
     HeaderComponent,
+    FooterComponent,
     BrowserModule ,
     SpinnerComponent,
     RouterModule,

@@ -6,12 +6,12 @@ import { CartComponent } from './carts/components/cart/cart.component';
 import { AllProductsComponent } from './products/components/all-products/all-products.component';
 import { ProductsDetailsComponent } from './products/components/products-details/products-details.component';
 
-// Router
+// All Application Routers Path and there Components [Routes handuler]
 const routes: Routes = [
-  {path:"products" , component:AllProductsComponent},
-  {path:"details/:id" , component:ProductsDetailsComponent},
-  {path:'cart' , component:CartComponent},
-  {path:"**" , redirectTo:"products" , pathMatch:"full"}
+  { path:"products" , component: AllProductsComponent },
+  { path:"details/:id" , component: ProductsDetailsComponent },
+  { path:'cart' , component: CartComponent },
+  { path:"**" , redirectTo:"products" , pathMatch:"full" }
 ];
 
 // Module
