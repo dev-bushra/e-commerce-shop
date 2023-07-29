@@ -1,22 +1,49 @@
-<div class="box">
-    <div class="row" *ngIf="!loading">
-        <div class="col-md-5 col-sm-12">
-            <img src="{{data.image}}" alt="sas">
+<!-- Products Details View -->
+
+<div class="wrapper" *ngIf="!loading">
+    <div class="d-flex w-100 justify-content-between">
+        <div class="d-flex">
+            <div class="product-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 18 18">
+                    <path fill="#000" d="M14.642 2.171A1.75 1.75 0 0013.062 2H4.938a1.75 1.75 0 00-1.58.97l-1.875 3.75A1.75 1.75 0 001 8.25v6.5c0 .966.784 1.75 1.75 1.75h11.5c.966 0 1.75-.784 1.75-1.75v-6.5a1.75 1.75 0 00-1.484-1.609l-1.875-3.75zM9 4.5a2.25 2.25 0 00-2.248 2.188L6.75 8.25h4.5l-.002-.562A2.25 2.25 0 009 4.5zm7.5 10.5a.25.25 0 01-.25.25h-11.5a.25.25 0 01-.25-.25v-6.5a.25.25 0 01.22-.248L5.41 8h7.18l1.91 3.75c.04.08.06.172.06.248v6.5z" />
+                </svg>
+            </div>
+            <h4>{{data.title}} Details</h4>
         </div>
-        <div class="col-md-7 col-sm-12">
-            <div class="info">
-                <ul class="list-unstyled">
-                    <li><strong>Title : </strong>{{data.title}}</li>
-                    <li><strong>Category : </strong>{{data.category}}</li>
-                    <li><strong>Description : </strong>{{data.description}}</li>
-                    <li><strong>Rate : </strong>{{data.rating.rate}}</li>
-                    <li><strong>Count : </strong>{{data.rating.count}}</li>
-                    <li><strong>Price : </strong>{{data.price}} LE</li>
-                </ul>
+        <div routerLink="/" class="btn cursor-pointer m-0 px-1 py-0 border-danger rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" fill="none" viewBox="0 0 18 18">
+                <path fill="#FF0000"
+                    d="M10.586 9l3.293-3.293a1 1 0 10-1.414-1.414L9.172 7.586 5.879 4.293a1 1 0 00-1.414 1.414L7.758 9l-3.293 3.293a1 1 0 001.414 1.414L9.172 10.414l3.293 3.293a1 1 0 001.414-1.414L10.586 9z" />
+            </svg>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <img src="{{data.image}}" alt="product image">
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <div class="info">
+                    <ul class="list-unstyled">
+                        <li><strong>Title: </strong>{{data.title}}</li>
+                        <li><strong>Category: </strong>{{data.category}}</li>
+                        <li><strong>Description: </strong>{{data.description}}</li>
+                        <li><strong>Rate: </strong>{{data.rating.rate}}</li>
+                        <li><strong>Count: </strong>{{data.rating.count}}</li>
+                        <li><strong>Price: </strong>{{data.price}} LE</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="add-card w-100">
+                <button class="btn btn-primary w-100" *ngIf="!addButton" (click)="addButton = true">Add To Cart</button>
+                <div class="d-flex" *ngIf="addButton">
+                    <input type="number" class="form-control count" [(ngModel)]="amount">
+                    <button class="mx-3 btn btn-danger w-50" (click)="add();addButton = false">Add</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="text-center">
-        <app-spinner *ngIf="loading"></app-spinner>
-    </div>
+</div>
+<div class="text-center" *ngIf="loading">
+    <app-spinner></app-spinner>
 </div>

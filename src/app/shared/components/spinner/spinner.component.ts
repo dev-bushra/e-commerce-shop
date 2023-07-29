@@ -1,4 +1,5 @@
 // Spinner Controller
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.scss']
 })
+  
 export class SpinnerComponent implements OnInit {
 
   constructor() { }

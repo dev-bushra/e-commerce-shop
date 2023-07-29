@@ -1,3 +1,5 @@
+// Product Details Controller
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
@@ -7,6 +9,7 @@ import { ProductsService } from '../../services/products.service';
   templateUrl: './products-details.component.html',
   styleUrls: ['./products-details.component.scss']
 })
+  
 export class ProductsDetailsComponent implements OnInit {
   id:any
   data:any = {}

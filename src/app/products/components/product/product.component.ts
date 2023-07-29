@@ -1,3 +1,5 @@
+// Product Card Controller
+
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../models/product';
 
@@ -6,6 +8,7 @@ import { Product } from '../../models/product';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
+  
 export class ProductComponent implements OnInit {
   @Input() data!:Product
   @Output() item = new EventEmitter();

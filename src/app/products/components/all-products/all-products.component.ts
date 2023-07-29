@@ -1,3 +1,5 @@
+// All Products List Component Controller
+
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductsService } from '../../services/products.service';
@@ -7,6 +9,7 @@ import { ProductsService } from '../../services/products.service';
   templateUrl: './all-products.component.html',
   styleUrls: ['./all-products.component.scss']
 })
+  
 export class AllProductsComponent implements OnInit {
 
   products:Product[] = [];
@@ -47,6 +50,7 @@ export class AllProductsComponent implements OnInit {
    (value == "all") ? this.getProducts() : this.getProductsCategory(value)
    
   }
+
   getProductsCategory(keyword:string) {
     this.loading = true
     this.service.getProductsByCategory(keyword).subscribe((res:any) => {
@@ -61,7 +65,7 @@ export class AllProductsComponent implements OnInit {
       let exist = this.cartProducts.find(item => item.item.id == event.item.id)
       if(exist) {
         alert("Product is already in your cart")
-      }else {
+      } else {
         this.cartProducts.push(event)
         localStorage.setItem("cart" , JSON.stringify(this.cartProducts))
       }
@@ -70,5 +74,4 @@ export class AllProductsComponent implements OnInit {
       localStorage.setItem("cart" , JSON.stringify(this.cartProducts))
     }
   }
-  
 }

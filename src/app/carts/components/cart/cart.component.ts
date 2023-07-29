@@ -1,3 +1,5 @@
+// Shoping Cart Controller
+
 import { Component, OnInit } from '@angular/core';
 import { CartsService } from '../../services/carts.service';
 
@@ -6,6 +8,7 @@ import { CartsService } from '../../services/carts.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
+  
 export class CartComponent implements OnInit {
   constructor(private service:CartsService) { }
   cartProducts:any[] = [];
