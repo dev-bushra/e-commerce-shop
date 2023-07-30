@@ -1,10 +1,10 @@
 footer {
- padding: 50px 90px;
+ padding: 20px 100px;
  color: #fff;
- height: 5rem;
  background-color: #1e8beb;
  display: flex;
  flex-direction: column;
+ align-items: center;
  gap: 1rem;
  width: 100%;
  align-items: center;
@@ -14,5 +14,28 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .logo {
+   color: #FFF;
+   margin: 0;
+   font-weight: 500;
+   font-size: 18px;
+   letter-spacing: 2px;
+   span {
+    margin-left: 3px;
+    font-weight: 600;
+    color: #dddd;
+   }
+  }
+  ul {
+   list-style: none;
+   li {
+    margin-top: .5rem;
+    font-size: 16px;
+    &:hover {
+     color: #316b9e;
+     text-decoration: underline;
+    }
+   }
+  }
  }
 }
